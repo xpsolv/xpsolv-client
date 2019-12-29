@@ -14,6 +14,21 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "com.xpsolv.dao.repositories")
 @EntityScan(basePackages = "com.xpsolv.dao.entity")
 
+
+/**
+ * 
+ * @author mohammad.makki
+ * 
+ * URL : http://localhost:2888/registration/smepd
+ * application/json body
+ * {
+	"smeFirstName" : "abc",
+	"smePhone" : "123455",
+	"smeCountry" : "India"
+	}
+ *
+ *test from postman for sme dummy table and data
+ */
 public class XpsolvControllerApplication {
 
 	public static void main(String[] args) {

@@ -15,7 +15,7 @@ public class RegistrationSmeProcess {
 	@Autowired
 	RegistrationSmePDDaoEntity registrationSmePDDaoEntity;
 
-	public String registerSmePd(SmeRpdModel smeRegistrationPdModel) {
+	public SmeRpdModel registerSmePd(SmeRpdModel smeRegistrationPdModel) {
 
 		System.out.println(smeRegistrationPdModel);
 		registrationSmePDDaoEntity.setSmeFirstName(smeRegistrationPdModel.getSmeFirstName());
@@ -25,7 +25,7 @@ public class RegistrationSmeProcess {
 		registrationSmePDDaoEntity.setSmeCountry(smeRegistrationPdModel.getSmeCountry());
 		registrationSmePDDaoEntity.setSmePhone(smeRegistrationPdModel.getSmePhone());
 
-		return registrationUserDao.registerSmePd(registrationSmePDDaoEntity).toString();
+		return registrationUserDao.registerSmePd(registrationSmePDDaoEntity);
 
 	}
 }

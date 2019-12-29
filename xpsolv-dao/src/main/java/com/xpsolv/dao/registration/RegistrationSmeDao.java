@@ -5,17 +5,24 @@ import org.springframework.stereotype.Service;
 
 import com.xpsolv.dao.entity.RegistrationSmePDDaoEntity;
 import com.xpsolv.dao.repositories.RegistrationSmePDRepository;
+import com.xpsolv.model.registration.SmeRpdModel;
 
 @Service
 public class RegistrationSmeDao {
 
 	@Autowired
 	RegistrationSmePDRepository registrationSmePDRepository;
+	
 
-	public RegistrationSmePDDaoEntity registerSmePd(RegistrationSmePDDaoEntity registrationSmePDDaoEntity) {
+	public SmeRpdModel registerSmePd(RegistrationSmePDDaoEntity registrationSmePDDaoEntity) {
 
 		System.out.println(registrationSmePDDaoEntity);
-		return registrationSmePDRepository.save(registrationSmePDDaoEntity);
+		SmeRpdModel smeModel = new SmeRpdModel();
+		RegistrationSmePDDaoEntity updateRegisterSme = registrationSmePDRepository.save(registrationSmePDDaoEntity);
+		smeModel.setSmeFirstName(updateRegisterSme.getSmeFirstName());
+		smeModel.setSmeCountry(updateRegisterSme.getSmeCountry());
+		smeModel.setSmePhone(updateRegisterSme.getSmePhone());
+		return smeModel;
 	}
 
 }

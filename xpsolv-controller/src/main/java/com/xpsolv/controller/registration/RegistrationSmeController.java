@@ -17,7 +17,7 @@ public class RegistrationSmeController {
 	RegistrationSmeProcess registrationSmeProcess;
 
 	@PostMapping("/smepd")
-	public String registerSmePersonalDetails(@RequestBody final SmeRpdModel smeRegistrationPdModel) {
+	public SmeRpdModel registerSmePersonalDetails(@RequestBody final SmeRpdModel smeRegistrationPdModel) {
 
 		System.out.println(smeRegistrationPdModel.getSmeFirstName());
 		/*
